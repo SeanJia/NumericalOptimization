@@ -4,6 +4,7 @@ implemented by me based on Simplex method and Newton method;
 For Linear programming, the function mylinprog(A,b,c): 
            minimize        c'*x,
           subject to     A*x >= b, x >= b
+
 For Nonlinear part, the function myzerofinder(F) computes the root of
 the equation F(x) = 0; the function unconopt(f,x0) calculates the local
 minimizer of f around moving from x0.
