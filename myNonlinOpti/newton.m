@@ -4,7 +4,7 @@ function [x,fval] = newton(f,g,H,x0,tol)
 % function f(x).
 %
 % Usage:
-% input: f: a string containing the function's expressiong
+% input: f: a string containing the function's expression
 %        g: a string for the gradient of f
 %        H: a string for the Hession
 %        x0: the initial guess tarting guess
@@ -34,7 +34,7 @@ fval = double(subs(f,args,x));
 gval = double(subs(g,args,x));
 Hval = double(subs(H,args,x));
 
-% when initial guess has gradient zero, try surrounding points
+% when initial guess has gradient zero, try surrounding points if necessary
 while double(gval) < tol
     x = x + 0.1;
     gval = double(subs(g,args,x));
@@ -48,6 +48,9 @@ disp([str1 str2]);
 
 % the while loop for newton iteration
 while iter < itmax && norm(gval) > tol 
+    
+    % old norm
+    oldnorm = norm(gval);
     
     % modified eigenvalue
     [V,D] = eig(Hval);
@@ -80,5 +83,10 @@ while iter < itmax && norm(gval) > tol
     str1  = sprintf(' %3g %4g %9.2e', iter, bt, alpha);
     str2  = sprintf(' %14.7e %9.2e', fval, norm(gval));
     disp([str1 str2])
+    
+    % end if two norm are significantly closed to each other
+    if abs(gval-oldnorm) < 1.0e-8
+        break
+    end
 end
 end
