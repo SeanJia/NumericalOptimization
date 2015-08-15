@@ -1,9 +1,8 @@
 ## Overview
 
 This repository has MATLAB package for linear and nonlinear optimization,
-implemented by Zhiwei Jia based on Simplex method and modified Newton method; 
-
-Welcome to visit my [person website](http://zhiweijia.website) for more details.
+implemented by Zhiwei Jia based on Simplex method and modified Newton method.
+For more informations, welcome to visit my [person website](http://zhiweijia.website).
 
 ## Linear Optimization
 
