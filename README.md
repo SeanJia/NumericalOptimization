@@ -2,13 +2,14 @@
 
 This repository has MATLAB package for linear and nonlinear optimization,
 implemented by Zhiwei Jia based on Simplex method and modified Newton method; 
+
 Welcome to visit my [person website](http://zhiweijia.website) for more details.
 
 ## Linear Optimization
 
 For Linear programming, the function mylinprog(A,b,c): 
-           minimize        c'*x,
-          subject to     A*x >= b, x >= b
+                  minimize        c'*x,
+                 subject to     A*x >= b, x >= b
 
 ## Nonlinear Optimization
 
